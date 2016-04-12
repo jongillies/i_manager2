@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @aws_vpc.name %>
+</p>
+
+<p>
+  <strong>Aws name:</strong>
+  <%= @aws_vpc.aws_name %>
+</p>
+
+<p>
+  <strong>Cidr block:</strong>
+  <%= @aws_vpc.cidr_block %>
+</p>
+
+<p>
+  <strong>Instance tenancy:</strong>
+  <%= @aws_vpc.instance_tenancy %>
+</p>
+
+<p>
+  <strong>Enable dns support:</strong>
+  <%= @aws_vpc.enable_dns_support %>
+</p>
+
+<p>
+  <strong>Enable dns hostnames:</strong>
+  <%= @aws_vpc.enable_dns_hostnames %>
+</p>
+
+<p>
+  <strong>Subnet base:</strong>
+  <%= @aws_vpc.subnet_base %>
+</p>
+
+<p>
+  <strong>Aws account:</strong>
+  <%= @aws_vpc.aws_account %>
+</p>
+
+<p>
+  <strong>Aws region:</strong>
+  <%= @aws_vpc.aws_region %>
+</p>
+
+<%= link_to 'Edit', edit_aws_vpc_path(@aws_vpc) %> |
+<%= link_to 'Back', aws_vpcs_path %>
