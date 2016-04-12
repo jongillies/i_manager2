@@ -1,6 +1,5 @@
-<h1>Editing aws_account</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @aws_account %> |
-<%= link_to 'Back', aws_accounts_path %>
+<%- model_class = AwsAccount -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => AwsAccount %></h1>
+</div>
+<%= render :partial => 'form' %>
