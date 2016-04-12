@@ -1,4 +1,5 @@
 ActiveAdmin.register AwsVpc do
+  permit_params :name, :aws_name, :cidr_block, :instance_tenancy, :enable_dns_support, :enable_dns_hostnames, :subnet_base
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
