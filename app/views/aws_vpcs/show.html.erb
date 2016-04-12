@@ -1,49 +1,36 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = AwsVpc -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => AwsVpc %></h1>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @aws_vpc.name %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:name) %></dt>
+      <dd><pre class="prettyprint"><%= @aws_vpc.name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:aws_name) %></dt>
+      <dd><pre class="prettyprint"><%= @aws_vpc.aws_name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:cidr_block) %></dt>
+      <dd><pre class="prettyprint"><%= @aws_vpc.cidr_block %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:instance_tenancy) %></dt>
+      <dd><pre class="prettyprint"><%= @aws_vpc.instance_tenancy %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:enable_dns_support) %></dt>
+      <dd><pre class="prettyprint"><%= @aws_vpc.enable_dns_support %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:enable_dns_hostnames) %></dt>
+      <dd><pre class="prettyprint"><%= @aws_vpc.enable_dns_hostnames %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:subnet_base) %></dt>
+      <dd><pre class="prettyprint"><%= @aws_vpc.subnet_base %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Aws name:</strong>
-  <%= @aws_vpc.aws_name %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              aws_vpcs_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_aws_vpc_path(@aws_vpc), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              aws_vpc_path(@aws_vpc),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Cidr block:</strong>
-  <%= @aws_vpc.cidr_block %>
-</p>
-
-<p>
-  <strong>Instance tenancy:</strong>
-  <%= @aws_vpc.instance_tenancy %>
-</p>
-
-<p>
-  <strong>Enable dns support:</strong>
-  <%= @aws_vpc.enable_dns_support %>
-</p>
-
-<p>
-  <strong>Enable dns hostnames:</strong>
-  <%= @aws_vpc.enable_dns_hostnames %>
-</p>
-
-<p>
-  <strong>Subnet base:</strong>
-  <%= @aws_vpc.subnet_base %>
-</p>
-
-<p>
-  <strong>Aws account:</strong>
-  <%= @aws_vpc.aws_account %>
-</p>
-
-<p>
-  <strong>Aws region:</strong>
-  <%= @aws_vpc.aws_region %>
-</p>
-
-<%= link_to 'Edit', edit_aws_vpc_path(@aws_vpc) %> |
-<%= link_to 'Back', aws_vpcs_path %>
