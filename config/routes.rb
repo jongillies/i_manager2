@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :aws_accounts
+
   resources :aws_vpcs
 
   devise_for :admin_users, ActiveAdmin::Devise.config
